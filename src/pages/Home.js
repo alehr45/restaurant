@@ -1,9 +1,13 @@
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <div style={styles.homeStyles}>Home</div>;
 };
 
-// const styles = { homeStyles: {} };
+const styles = {
+  homeStyles: {
+    backgroundColor: "antiquewhite"
+  }
+};
 
 export default Home;
