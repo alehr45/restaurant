@@ -1,1 +1,1 @@
-Restaurant App made with React. 
+Stylish restaurant app made with React. 
