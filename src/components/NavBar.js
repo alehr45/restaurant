@@ -1,13 +1,36 @@
-import React from "react";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
-  return <div style={styles.navStyles}>Navbar</div>;
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar style={{ background: '#3b3b3b' }} position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography style={{ fontFamily: "concert" }} variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            Lazy Local Sandwich Co.
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
 };
 
-const styles = {
-  navStyles: {
-    backgroundColor: "lightgrey"
-  }
-};
+
 
 export default NavBar;
