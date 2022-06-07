@@ -22,7 +22,7 @@ const NavBar = () => {
             <MenuIcon />
           </IconButton>
           <Typography style={{ fontFamily: "concert" }} variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            Nashville Sandwich Co.
+            Lazy Local Sandwich Co.
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
