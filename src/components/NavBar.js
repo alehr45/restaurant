@@ -1,16 +1,16 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: '#3b3b3b' }} position="static">
+      <AppBar style={styles.navStyles} position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -21,8 +21,13 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography style={{ fontFamily: "concert" }} variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            Lazy Local Sandwich Co.
+          <Typography
+            style={styles.titleStyles}
+            variant="h5"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          >
+            Big Belly Deli
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -31,6 +36,15 @@ const NavBar = () => {
   );
 };
 
-
+const styles = {
+  navStyles: {
+    backgroundColor: "#c21923",
+    position: "fixed"
+  },
+  titleStyles: {
+    fontFamily: "Helvetica",
+    color: "black"
+  }
+};
 
 export default NavBar;

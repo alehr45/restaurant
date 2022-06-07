@@ -2,7 +2,7 @@ Create restaurant app with React and MongoDB
 
 Name:
 
-Lazy Local Sandwich Co.
+Big Belly Deli
 
 Concept:
 
