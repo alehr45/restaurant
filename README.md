@@ -2,7 +2,7 @@ Create restaurant app with React and MongoDB
 
 Name:
 
-Big Belly Deli
+The Deli
 
 Concept:
 

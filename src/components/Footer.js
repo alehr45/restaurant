@@ -6,7 +6,7 @@ const Footer = () => {
 
 const styles = {
   footerStyles: {
-
+    padding: 20,
     display: "flex",
     justifyContent: "center"
   }

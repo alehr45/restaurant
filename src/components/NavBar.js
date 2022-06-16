@@ -23,7 +23,6 @@ function ElevationScroll(props) {
 }
 
 
-
 export default function ElevateAppBar(props) {
   const styles = {
     logoStyles: {
@@ -42,7 +41,7 @@ export default function ElevateAppBar(props) {
           <Toolbar style={styles.navStyles}>
             <img style={styles.logoStyles} src={logo} alt="" />
             <Typography fontFamily="Helvetica" variant="h4" component="div" sx={{ flexGrow: 1 }}>
-              The Big Belly Deli
+              The Deli
             </Typography>
             <Button href="/" color="inherit">Welcome</Button>
             <Button href="/food-menu" color="inherit">Food Menu</Button>
