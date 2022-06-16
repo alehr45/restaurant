@@ -1,12 +1,14 @@
 import React from "react";
 
 const Footer = () => {
-  return <div style={styles.footerStyles}>Footer</div>;
+  return <div style={styles.footerStyles}>----</div>;
 };
 
 const styles = {
   footerStyles: {
-    backgroundColor: "#c21923"
+
+    display: "flex",
+    justifyContent: "center"
   }
 };
 

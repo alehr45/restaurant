@@ -1,50 +1,60 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Button from '@mui/material/Button';
+import logo from "../images/logo.jpeg"
 
-const NavBar = () => {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={styles.navStyles} position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            style={styles.titleStyles}
-            variant="h5"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
-            Big Belly Deli
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
-};
 
-const styles = {
-  navStyles: {
-    backgroundColor: "#c21923",
-    position: "fixed"
-  },
-  titleStyles: {
-    fontFamily: "Helvetica",
-    color: "black"
+function ElevationScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
+
+
+
+export default function ElevateAppBar(props) {
+  const styles = {
+    logoStyles: {
+      height: 100
+    },
+    navStyles: {
+      backgroundColor: "white"
+    }
   }
-};
 
-export default NavBar;
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar color="inherit">
+          <Toolbar style={styles.navStyles}>
+            <img style={styles.logoStyles} src={logo} alt="" />
+            <Typography fontFamily="Helvetica" variant="h4" component="div" sx={{ flexGrow: 1 }}>
+              The Big Belly Deli
+            </Typography>
+            <Button href="/" color="inherit">Welcome</Button>
+            <Button href="/food-menu" color="inherit">Food Menu</Button>
+            <Button href="/drink-menu" color="inherit">Drink Menu</Button>
+            <Button href="/reserve" color="inherit">Reserve</Button>
+            <Button href="/togo" color="inherit">Togo</Button>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+
+      <Toolbar />
+
+    </React.Fragment>
+  )
+};

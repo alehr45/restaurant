@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "caviar";
+    src: url('../src/fonts/CaviarDreams.ttf')
+}
+
+@font-face {
+    font-family: "coffee";
+    src: url("../src/fonts/Coffee\ Extra.ttf")
+}
+
+.nav-title {
+    font-family: "coffee";
+}
