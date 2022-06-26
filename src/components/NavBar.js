@@ -1,12 +1,11 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Button from '@mui/material/Button';
-import logo from "../images/logo.jpeg"
-
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Button from "@mui/material/Button";
+import logo from "../images/logo.jpeg";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -14,24 +13,27 @@ function ElevationScroll(props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    target: window ? window() : undefined,
+    target: window ? window() : undefined
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
+    elevation: trigger ? 4 : 0
   });
 }
 
-
-export default function ElevateAppBar(props) {
+const ElevateAppBar = props => {
   const styles = {
     logoStyles: {
       height: 100
     },
     navStyles: {
       backgroundColor: "white"
+    },
+    titleStyles: {
+      fontSize: 45,
+      fontFamily: "fascinate"
     }
-  }
+  };
 
   return (
     <React.Fragment>
@@ -40,20 +42,33 @@ export default function ElevateAppBar(props) {
         <AppBar color="inherit">
           <Toolbar style={styles.navStyles}>
             <img style={styles.logoStyles} src={logo} alt="" />
-            <Typography fontFamily="Helvetica" variant="h4" component="div" sx={{ flexGrow: 1 }}>
+
+            <Typography style={styles.titleStyles} sx={{ flexGrow: 1 }}>
               The Deli
             </Typography>
-            <Button href="/" color="inherit">Welcome</Button>
-            <Button href="/food-menu" color="inherit">Food Menu</Button>
-            <Button href="/drink-menu" color="inherit">Drink Menu</Button>
-            <Button href="/reserve" color="inherit">Reserve</Button>
-            <Button href="/togo" color="inherit">Togo</Button>
+
+            <Button href="/" color="inherit">
+              Welcome
+            </Button>
+            <Button href="/food-menu" color="inherit">
+              Food Menu
+            </Button>
+            <Button href="/drink-menu" color="inherit">
+              Drink Menu
+            </Button>
+            <Button href="/reserve" color="inherit">
+              Reserve
+            </Button>
+            <Button href="/togo" color="inherit">
+              Togo
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
 
       <Toolbar />
-
     </React.Fragment>
-  )
+  );
 };
+
+export default ElevateAppBar;
